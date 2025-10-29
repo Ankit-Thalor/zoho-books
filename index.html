@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOHO Books - Your Personal Book Recommendation Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-book"></i>
+                <span>ZOHO Books</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#submit">Submit Review</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Great Read</h1>
+            <p>Curated book recommendations tailored to your taste. Join our community of book lovers!</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search books, authors, or genres..." id="searchInput">
+                <button type="button" onclick="searchBooks()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section id="recommendations" class="featured-books">
+        <div class="container">
+            <h2>Featured Recommendations</h2>
+            <div class="books-grid" id="featuredBooks">
+                <!-- Books will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Genres Section -->
+    <section id="genres" class="genres-section">
+        <div class="container">
+            <h2>Browse by Genre</h2>
+            <div class="genres-grid">
+                <div class="genre-card" onclick="filterByGenre('fiction')">
+                    <i class="fas fa-magic"></i>
+                    <h3>Fiction</h3>
+                </div>
+                <div class="genre-card" onclick="filterByGenre('mystery')">
+                    <i class="fas fa-search"></i>
+                    <h3>Mystery</h3>
+                </div>
+                <div class="genre-card" onclick="filterByGenre('romance')">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romance</h3>
+                </div>
+                <div class="genre-card" onclick="filterByGenre('sci-fi')">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Sci-Fi</h3>
+                </div>
+                <div class="genre-card" onclick="filterByGenre('biography')">
+                    <i class="fas fa-user"></i>
+                    <h3>Biography</h3>
+                </div>
+                <div class="genre-card" onclick="filterByGenre('self-help')">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Self-Help</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>Recent Reviews</h2>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Review Section -->
+    <section id="submit" class="submit-section">
+        <div class="container">
+            <h2>Submit Your Review</h2>
+            <form class="review-form" id="reviewForm">
+                <div class="form-group">
+                    <label for="bookTitle">Book Title</label>
+                    <input type="text" id="bookTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select id="genre" required>
+                        <option value="">Select a genre</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="romance">Romance</option>
+                        <option value="sci-fi">Science Fiction</option>
+                        <option value="biography">Biography</option>
+                        <option value="self-help">Self-Help</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rating" value="5" id="star5">
+                        <label for="star5">★</label>
+                        <input type="radio" name="rating" value="4" id="star4">
+                        <label for="star4">★</label>
+                        <input type="radio" name="rating" value="3" id="star3">
+                        <label for="star3">★</label>
+                        <input type="radio" name="rating" value="2" id="star2">
+                        <label for="star2">★</label>
+                        <input type="radio" name="rating" value="1" id="star1">
+                        <label for="star1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review">Your Review</label>
+                    <textarea id="review" rows="5" placeholder="Share your thoughts about this book..." required></textarea>
+                </div>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book"></i> ZOHO Books</h3>
+                    <p>Your personal book recommendation hub. Discover, review, and share amazing books.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-goodreads"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ZOHO Books. Made with ❤️ for book lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Scripts -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
