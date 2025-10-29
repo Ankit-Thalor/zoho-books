@@ -27,14 +27,6 @@ A modern, responsive book recommendation website built with HTML, CSS, and JavaS
 - Form validation
 - Cross-browser compatibility
 
-## 🛠️ Setup Instructions
-
-### Option 1: Simple Setup (Recommended for beginners)
-1. Download all files (index.html, styles.css, script.js)
-2. Place them in the same folder
-3. Double-click `index.html` to open in your web browser
-4. That's it! Your website is ready to use
-
 ## 📱 Features Walkthrough
 
 ### Navigation
