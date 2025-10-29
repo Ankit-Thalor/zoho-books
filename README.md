@@ -27,16 +27,6 @@ A modern, responsive book recommendation website built with HTML, CSS, and JavaS
 - Form validation
 - Cross-browser compatibility
 
-## 📁 Project Structure
-
-```
-ZOHO Books/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-└── README.md           # Project documentation
-```
-
 ## 🛠️ Setup Instructions
 
 ### Option 1: Simple Setup (Recommended for beginners)
